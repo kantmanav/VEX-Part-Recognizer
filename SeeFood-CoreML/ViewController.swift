@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var searchLabel: UILabel!
     
     var labelText = ""
+    let parts = ["12 Tooth Gear", "24 Tooth Gear", "Motor", "36 Tooth Gear", "Axle", "Base Plate", "C-Channel", "Vex Chain", "Vex Cortex"]
     
     @IBAction func seeDetails(_ sender: Any) {
         labelText = self.navigationItem.title!
@@ -67,86 +68,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     fatalError("unexpected result type from VNCoreMLRequest")
                 }
             
-            if topResult.identifier.contains("12 Tooth Gear") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "12 Tooth Gear"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
+            for part in self.parts {
+                if topResult.identifier.contains(part) {
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = part
+                        self.navigationController?.navigationBar.barTintColor = UIColor.green
+                        self.navigationController?.navigationBar.isTranslucent = false
+                        self.hide_buttons()
                     }
-                }
-            else if topResult.identifier.contains("24 Tooth Gear") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "24 Tooth Gear"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
             }
-            else if topResult.identifier.contains("Motor") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Motor"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("36 Tooth Gear") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "36 Tooth Gear"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("Axle") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Axle"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("Base Plate") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Base Plate"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("C-Channel") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "C-Channel"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("Vex Chain") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Vex Chain"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                    
-                }
-            }
-            else if topResult.identifier.contains("Vex Cortex") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Vex Cortex"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.hide_buttons()
-                        
-                    }
-            }            
                 
             
         }
@@ -155,14 +85,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         do { try handler.perform([request]) }
         catch { print(error) }
-        
-        
-        
     }
-    
-    
-    
-    
+        
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -183,7 +107,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
         
 
-    @IBAction func cameraTapped(_ sender: Any) {
+    func cameraTapped(_ sender: Any) {
         
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
@@ -197,4 +121,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
+}
 }
