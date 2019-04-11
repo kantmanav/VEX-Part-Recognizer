@@ -77,7 +77,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         self.hide_buttons()
                     }
             }
-                
             
         }
         
