@@ -1,11 +1,3 @@
-//
-//  DefinitionVIewControllerViewController.swift
-//  SeeFood-CoreML
-//
-//  Created by Useless on 4/2/19.
-//  Copyright © 2019 Angela Yu. All rights reserved.
-//
-
 import UIKit
 
 class DefinitionVIewControllerViewController: UIViewController {
