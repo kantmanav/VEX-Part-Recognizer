@@ -36,7 +36,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-E4-85J">
                                 <rect key="frame" x="133" y="500" width="109" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="See Details">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,9 +49,9 @@
                         <viewLayoutGuide key="safeArea" id="iaz-Dy-4y9"/>
                     </view>
                     <navigationItem key="navigationItem" id="wqC-cM-JyS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0kA-yv-IwT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="1hx-gm-Y9L">
                             <connections>
-                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="O85-kP-hqL"/>
+                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="Y5T-1l-M8L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -89,7 +88,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-2v-uEK">
                                 <rect key="frame" x="133" y="552" width="109" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
